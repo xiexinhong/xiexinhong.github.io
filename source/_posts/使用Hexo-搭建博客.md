@@ -9,7 +9,7 @@ categories:
 # 1. 官方文档
 https://hexo.io/zh-cn/docs/
 
-# 2. 基本的环境参考
+# 2. 具体搭建
 https://linlif.github.io/2017/05/25/macOS-Sierra%E4%BD%BF%E7%94%A8GitGubPages-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22017-05-25/
 
 # 3. 配置
