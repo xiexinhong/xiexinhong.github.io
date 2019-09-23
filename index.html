@@ -249,6 +249,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/20/重构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XXH">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XXH博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/20/重构/" itemprop="url">重构</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-20T10:00:35+08:00">
+                2019-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/架构/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.infoq.cn/article/clean-code-refactor" target="_blank" rel="noopener">https://www.infoq.cn/article/clean-code-refactor</a></p>
+<p>#重构的作用</p>
+<ol>
+<li>改善既有的结构</li>
+<li>帮助我们理解原来很难理解的流程</li>
+<li>增加对代码和业务逻辑功能的理解</li>
+</ol>
+<p>#重构的时机<br>我们无需专门的挑出时间进行重构，重构应该随时随地的进行，即遵循三次法则：事不过三，三则重构</p>
+<ol>
+<li>当添加新功能时如果不是特别容易，可以通过重构使添加特性和新功能变得更容易。</li>
+<li>修改 Bug 的时候去重构，比如你在查找定位 Bug 的过程中，发现以前自己的代码或者别人的代码因为设计缺陷比如可扩展性、健壮性比较差造成的，那么此时就是一个比较好的重构时机。</li>
+<li>Code Review 时去重构，很多公司研发团队都会有定期的 Code Review, 这种活动的好处多多，比如有助于在开发团队中传播知识进行技术分享，有助于让较有经验的开发者把知识传递给欠缺经验的人，并帮助更多的人对软件的其他业务模块更加熟悉从而实现跨模块的迭代开发。</li>
+</ol>
+<p>#重构技巧</p>
+<ol>
+<li>函数重构<ol>
+<li>重命名函数</li>
+<li>移除参数</li>
+<li>将查询函数和修改函数分离</li>
+<li>令函数携带参数</li>
+<li>以明确函数取代参数</li>
+<li>保持对象完整性</li>
+<li>引入参数对象</li>
+<li>移除设值函数</li>
+<li>隐藏函数</li>
+<li>以工厂函数取代构造函数 </li>
+</ol>
+</li>
+<li>条件表达式<ol>
+<li>分解条件表达式</li>
+<li>合并条件表达式</li>
+<li>合并重复的条件片段</li>
+<li>移除控制标记</li>
+<li>以卫语句替代嵌套条件表达式</li>
+<li>以多态取代条件表达式</li>
+<li>引入 Null 对象</li>
+<li>引入断言</li>
+<li>以 MAP 取代条件表达式</li>
+<li>通过反射取代条件表达式</li>
+</ol>
+</li>
+</ol>
+<p>#</p>
+<ol>
+<li><p>整洁的代码就是一种简约（简单而不过于太简单）的设计，阅读代码的人能很清晰的明白这里在干什么，而不是隐涩难懂，整洁的代码读起来让人感觉到就像阅读散文 - 艺术的沉淀，作者是精心在意缔造出来</p>
+</li>
+<li><p>们要做的是重构不是重写，要先从小范围的局部重构开始，然后逐步扩展到整个模块。</p>
+</li>
+<li><p>重复代码（Duplicated Code）首当其冲</p>
+<ol>
+<li>过长函数 (Long Method)、</li>
+<li>过大的类 (Large Class)、</li>
+<li>过长参数列表 (Long Parameter List)、</li>
+<li>冗余类（Lazy Class）、</li>
+<li>冗余函数（Lazy Function）</li>
+<li>无用函数参数（Unused Function Parameter）、</li>
+<li>函数圈复杂度超过 10（The Complexity is over 10）、</li>
+<li>依恋情结（Feature Envy）、</li>
+<li>Switch 过多使用（Switch Abuse）、</li>
+<li>过度扩展设计（Over-extend design）、</li>
+<li>不可读或者可读性差的变量名和函数名 (unread variable or function name)、</li>
+<li>异曲同工类（Alternative Classes with Different Interfaces）、</li>
+<li>过度耦合的消息链（Message Chains）、</li>
+<li>令人迷惑的临时字段（Temporary Field）、</li>
+<li>过多注释 (Too Many Comments) 等坏味道。</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/React-Flex布局学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -883,7 +1092,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -894,7 +1103,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
